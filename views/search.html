@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Buses | SmartNepal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/CSS/style.css">
+    <link rel="stylesheet" href="/public/CSS/search.css">
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">SmartNepal</a>
+            <div class="nav-links">
+                <a href="#" class="active">Bus Tickets</a>
+                <a href="#">Hotels</a>
+                <a href="#">Tour Packages</a>
+                <a href="#">Help</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-outline">Login</a>
+                    <a href="signup.html" class="btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Search Header -->
+    <section class="search-header">
+        <div class="container">
+            <div class="search-summary">
+                <h1>Mumbai to Goa</h1>
+                <p class="trip-date">Sat, 15 Jul 2023 • 1 Passenger</p>
+                <button class="btn-outline modify-search">Modify Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="search-main">
+        <div class="container">
+            <!-- Filters Section -->
+            <aside class="filters">
+                <div class="filter-section">
+                    <h3>Filters</h3>
+                    <button class="clear-filters">Clear All</button>
+                </div>
+
+                <div class="filter-section">
+                    <h4>Departure Time</h4>
+                    <div class="time-slider">
+                        <div class="time-range">
+                            <span>6 AM</span>
+                            <span>12 PM</span>
+                            <span>6 PM</span>
+                            <span>12 AM</span>
+                        </div>
+                        <input type="range" min="0" max="24" value="12" class="slider">
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h4>Bus Types</h4>
+                    <div class="filter-options">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" checked> AC
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" checked> Non-AC
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Sleeper
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Luxury
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h4>Amenities</h4>
+                    <div class="filter-options">
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> WiFi
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Charging Port
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Washroom
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Blanket
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h4>Operators</h4>
+                    <div class="filter-options">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" checked> SmartNepal Travels
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" checked> National Express
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> City Link
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Royal Cruiser
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h4>Price Range</h4>
+                    <div class="price-range">
+                        <span class="min-price">₹500</span>
+                        <span class="max-price">₹5000</span>
+                        <input type="range" min="500" max="5000" value="2500" class="slider">
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Results Section -->
+            <section class="results">
+                <div class="results-header">
+                    <div class="results-count">
+                        <span>24 Buses Found</span>
+                        <span class="fastest-filter">Fastest <i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="sort-options">
+                        <span class="sort-label">Sort by:</span>
+                        <button class="sort-btn active">Departure</button>
+                        <button class="sort-btn">Duration</button>
+                        <button class="sort-btn">Price</button>
+                        <button class="sort-btn">Ratings</button>
+                    </div>
+                </div>
+
+                <!-- Bus Cards -->
+                <div class="bus-cards">
+                    <!-- Sample Bus Card 1 -->
+                    <div class="bus-card featured">
+                        <div class="bus-badge">BEST DEAL</div>
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">22:30</span>
+                                    <div class="duration">
+                                        <span>8h 30m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">07:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="/public/images/bus.jpeg" alt="SmartNepal Travels" class="operator-logo">
+                                    <span class="operator-name">SmartNepal Travels</span>
+                                    <span class="bus-type">AC Sleeper (2+1)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="WiFi"><i class="fas fa-wifi"></i></div>
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Washroom"><i class="fas fa-restroom"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹1,299</span>
+                                    <span class="original-price">₹1,799</span>
+                                    <span class="discount">28% OFF</span>
+                                </div>
+                                <span class="seats-left">Only 3 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                        <div class="bus-details">
+                            <div class="boarding-points">
+                                <div class="boarding-point">
+                                    <span class="time">22:15</span>
+                                    <span class="location">Mumbai Central Bus Stand</span>
+                                </div>
+                                <div class="boarding-point">
+                                    <span class="time">07:00</span>
+                                    <span class="location">Panjim Bus Stand, Goa</span>
+                                </div>
+                            </div>
+                            <div class="bus-facilities">
+                                <span><i class="fas fa-snowflake"></i> AC</span>
+                                <span><i class="fas fa-bed"></i> Sleeper</span>
+                                <span><i class="fas fa-tv"></i> TV</span>
+                            </div>
+                            <div class="bus-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5 (128 Reviews)</span>
+                                </div>
+                                <button class="btn-outline view-reviews">View Reviews</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sample Bus Card 2 -->
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More bus cards would follow the same pattern -->
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-card">
+                        <div class="bus-main">
+                            <div class="bus-info">
+                                <div class="bus-timings">
+                                    <span class="departure">08:00</span>
+                                    <div class="duration">
+                                        <span>10h 0m</span>
+                                        <div class="route-line"></div>
+                                    </div>
+                                    <span class="arrival">18:00</span>
+                                </div>
+                                <div class="bus-operator">
+                                    <img src="../images/national-express-logo.png" alt="National Express" class="operator-logo">
+                                    <span class="operator-name">National Express</span>
+                                    <span class="bus-type">AC Seater (2+2)</span>
+                                </div>
+                            </div>
+                            <div class="bus-amenities">
+                                <div class="amenity" title="Charging Port"><i class="fas fa-bolt"></i></div>
+                                <div class="amenity" title="Blanket"><i class="fas fa-tshirt"></i></div>
+                            </div>
+                            <div class="bus-price">
+                                <div class="price-container">
+                                    <span class="price">₹999</span>
+                                    <span class="original-price">₹1,299</span>
+                                    <span class="discount">23% OFF</span>
+                                </div>
+                                <span class="seats-left">12 seats left</span>
+                                <button class="btn-primary view-seats">View Seats</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn disabled"><i class="fas fa-chevron-left"></i> Previous</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Why Choose Us Banner -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Book With SmartNepal?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safe & Secure</h3>
+                    <p>Your security is our priority. All bookings are 100% secure.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Found a better price? We'll match it and give you 10% off.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Customer Support</h3>
+                    <p>Our travel experts are always available to assist you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SmartNepal</h3>
+                    <p>India's fastest growing online bus ticket booking platform</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Top Routes</h3>
+                    <ul>
+                        <li><a href="#">Mumbai to Goa</a></li>
+                        <li><a href="#">Delhi to Manali</a></li>
+                        <li><a href="#">Bangalore to Hyderabad</a></li>
+                        <li><a href="#">Chennai to Pondicherry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SmartNepal. All rights reserved.</p>
+                <div class="payment-methods">
+                    <img src="images/visa.png" alt="Visa">
+                    <img src="images/mastercard.png" alt="Mastercard">
+                    <img src="images/upi.png" alt="UPI">
+                    <img src="images/paytm.png" alt="Paytm">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/js/search.js"></script>
+</body>
+</html>

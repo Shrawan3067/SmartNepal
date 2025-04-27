@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation | SmartNepal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/CSS/style.css">
+    <link rel="stylesheet" href="/public/CSS/confirmation.css">
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">SmartNepal</a>
+            <div class="nav-links">
+                <a href="#">Bus Tickets</a>
+                <a href="#">Hotels</a>
+                <a href="#">Tour Packages</a>
+                <a href="#">Help</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-outline">Login</a>
+                    <a href="signup.html" class="btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Confirmation Hero -->
+    <section class="confirmation-hero">
+        <div class="container">
+            <div class="confirmation-check">
+                <div class="check-circle">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h1>Booking Confirmed!</h1>
+                <p>Your ticket has been successfully booked. Details have been sent to your email.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="confirmation-main">
+        <div class="container">
+            <!-- Ticket Summary -->
+            <section class="ticket-summary">
+                <div class="summary-header">
+                    <h2>Your Journey Details</h2>
+                    <div class="ticket-actions">
+                        <button class="btn-outline"><i class="fas fa-download"></i> Download Ticket</button>
+                        <button class="btn-outline"><i class="fas fa-share-alt"></i> Share</button>
+                    </div>
+                </div>
+                
+                <div class="ticket-card">
+                    <div class="ticket-qr">
+                        <img src="../images/qr-code.png" alt="QR Code">
+                        <span class="booking-id">Booking ID: VOY78945612</span>
+                    </div>
+                    
+                    <div class="ticket-details">
+                        <div class="route">
+                            <div class="cities">
+                                <span class="from-city">Mumbai</span>
+                                <i class="fas fa-arrow-right"></i>
+                                <span class="to-city">Goa</span>
+                            </div>
+                            <span class="travel-date">Sat, 15 Jul 2023</span>
+                        </div>
+                        
+                        <div class="timings">
+                            <div class="departure">
+                                <span class="time">22:30</span>
+                                <span class="location">Mumbai Central Bus Stand</span>
+                            </div>
+                            <div class="duration">
+                                <span>8h 30m</span>
+                                <div class="route-line"></div>
+                            </div>
+                            <div class="arrival">
+                                <span class="time">07:00</span>
+                                <span class="location">Panjim Bus Stand, Goa</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bus-details">
+                            <div class="operator">
+                                <img src="../images/SmartNepal-logo.png" alt="SmartNepal Travels">
+                                <span>SmartNepal Travels • AC Sleeper (2+1)</span>
+                            </div>
+                            <div class="amenities">
+                                <span><i class="fas fa-wifi"></i> WiFi</span>
+                                <span><i class="fas fa-bolt"></i> Charging</span>
+                                <span><i class="fas fa-snowflake"></i> AC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="passenger-details">
+                        <h3>Passenger Details</h3>
+                        <div class="passenger">
+                            <span class="name">Rahul Sharma (Male, 28)</span>
+                            <span class="seat">Seat: A12 (Upper)</span>
+                        </div>
+                        <div class="contact">
+                            <span><i class="fas fa-phone"></i> +91 9876543210</span>
+                            <span><i class="fas fa-envelope"></i> rahul.sharma@example.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="boarding-pass">
+                    <h3>Boarding Pass</h3>
+                    <div class="pass-container">
+                        <div class="pass-left">
+                            <img src="../images/SmartNepal-logo.png" alt="SmartNepal">
+                            <span class="passenger-name">Rahul Sharma</span>
+                            <span class="seat-number">Seat A12</span>
+                        </div>
+                        <div class="pass-right">
+                            <div class="pass-qr">
+                                <img src="../images/qr-code.png" alt="QR Code">
+                            </div>
+                            <div class="pass-details">
+                                <span>Mumbai → Goa</span>
+                                <span>15 Jul 2023 • 22:30</span>
+                                <span>Bus: VOY-7894</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Payment Summary -->
+            <section class="payment-summary">
+                <h2>Payment Summary</h2>
+                <div class="payment-card">
+                    <div class="payment-row">
+                        <span>Base Fare (1 Passenger)</span>
+                        <span>₹1,199</span>
+                    </div>
+                    <div class="payment-row">
+                        <span>Taxes & Fees</span>
+                        <span>₹100</span>
+                    </div>
+                    <div class="payment-row">
+                        <span>Discount Applied</span>
+                        <span>-₹200</span>
+                    </div>
+                    <div class="payment-row total">
+                        <span>Total Amount Paid</span>
+                        <span>₹1,099</span>
+                    </div>
+                    <div class="payment-method">
+                        <span>Payment Method:</span>
+                        <div class="method">
+                            <img src="../images/upi-icon.png" alt="UPI">
+                            <span>UPI (rahul.sharma@okhdfcbank)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Help & Next Steps -->
+            <section class="help-section">
+                <div class="help-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="help-content">
+                        <h3>Boarding Point Location</h3>
+                        <p>Mumbai Central Bus Stand, Near Railway Station, Mumbai - 400008</p>
+                        <button class="btn-outline"><i class="fas fa-map"></i> View on Map</button>
+                    </div>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-headset"></i>
+                    <div class="help-content">
+                        <h3>Need Help?</h3>
+                        <p>Our customer support team is available 24/7 to assist you with any queries.</p>
+                        <button class="btn-outline"><i class="fas fa-phone"></i> Call Support</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Recommended Add-ons -->
+            <section class="addons-section">
+                <h2>Complete Your Journey</h2>
+                <div class="addons-grid">
+                    <div class="addon-card">
+                        <img src="../images/hotel-addon.jpg" alt="Hotel">
+                        <div class="addon-content">
+                            <h3>Hotels in Goa</h3>
+                            <p>Book your stay at the best hotels starting from ₹999/night</p>
+                            <button class="btn-primary">Browse Hotels</button>
+                        </div>
+                    </div>
+                    <div class="addon-card">
+                        <img src="../images/cab-addon.jpg" alt="Cab">
+                        <div class="addon-content">
+                            <h3>Cab to Bus Stand</h3>
+                            <p>Pre-book your cab to reach the boarding point on time</p>
+                            <button class="btn-primary">Book Cab</button>
+                        </div>
+                    </div>
+                    <div class="addon-card">
+                        <img src="../images/tour-addon.jpg" alt="Tour">
+                        <div class="addon-content">
+                            <h3>Goa Tour Packages</h3>
+                            <p>Explore Goa with our specially curated tour packages</p>
+                            <button class="btn-primary">View Tours</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script src="/public/js/confirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Search Results | Voyago</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="public/CSS/style.css">
+    <style>
+        /* TVK Travels Style Search Results */
+.bus-card.tvk-style {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.bus-header {
+    margin-bottom: 20px;
+}
+
+.bus-header h2 {
+    color: var(--primary);
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.bus-type {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.timing-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.departure, .arrival {
+    text-align: center;
+}
+
+.departure .time, .arrival .time {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.departure .date, .arrival .date {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.duration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.duration span {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 5px;
+}
+
+.route-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-gray);
+    position: relative;
+}
+
+.route-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+.route-line::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--light-gray);
+    margin: 20px 0;
+}
+
+.bus-details-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.detail-option.active {
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+.detail-option i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.detail-option.active i {
+    transform: rotate(180deg);
+}
+
+.detail-section {
+    display: none;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--light);
+    border-radius: 4px;
+}
+
+.detail-section.active {
+    display: block;
+}
+
+.bus-photos {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.bus-photos img {
+    height: 150px;
+    border-radius: 4px;
+}
+
+.amenities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.amenities-list span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.amenities-list i {
+    color: var(--primary);
+}
+
+.pickup-points, .drop-points {
+    margin-bottom: 20px;
+}
+
+.pickup-points h3, .drop-points h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.pickup-points ul, .drop-points ul {
+    list-style: none;
+}
+
+.pickup-points li, .drop-points li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--light-gray);
+}
+
+.pickup-points li:last-child, .drop-points li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.pickup-points .time, .drop-points .time {
+    min-width: 50px;
+    color: var(--gray);
+}
+
+.pickup-points .location, .drop-points .location {
+    flex: 1;
+}
+
+.rating-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars {
+    color: #f6ad55;
+}
+
+.stars span {
+    color: var(--gray);
+    margin-left: 5px;
+}
+
+.view-reviews {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.bus-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-gray);
+}
+
+.price-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.original-price {
+    font-size: 16px;
+    text-decoration: line-through;
+    color: var(--gray);
+}
+
+.discount {
+    font-size: 14px;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.select-seats {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .timing-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .duration {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .duration span {
+        margin: 0 10px;
+    }
+    
+    .route-line {
+        flex: 1;
+        height: 1px;
+    }
+    
+    .bus-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .select-seats {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">Voyago</a>
+            <div class="nav-links">
+                <a href="#" class="active">Bus Tickets</a>
+                <a href="#">Hotels</a>
+                <a href="#">Tour Packages</a>
+                <a href="#">Help</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-outline">Login</a>
+                    <a href="signup.html" class="btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Search Header -->
+    <section class="search-header">
+        <div class="container">
+            <div class="search-summary">
+                <h1>Bangalore to Hyderabad</h1>
+                <p class="trip-date">Sat, 29 Apr 2023 • 1 Passenger</p>
+                <button class="btn-outline modify-search">Modify Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="search-main">
+        <div class="container">
+            <!-- Filters Section -->
+            <aside class="filters">
+                <!-- Filter sections same as before -->
+            </aside>
+
+            <!-- Results Section -->
+            <section class="results">
+                <div class="results-header">
+                    <div class="results-count">
+                        <span>12 Buses Found</span>
+                        <span class="fastest-filter">Fastest <i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="sort-options">
+                        <span class="sort-label">Sort by:</span>
+                        <button class="sort-btn active">Departure</button>
+                        <button class="sort-btn">Duration</button>
+                        <button class="sort-btn">Price</button>
+                        <button class="sort-btn">Ratings</button>
+                    </div>
+                </div>
+
+                <!-- Bus Cards -->
+                <div class="bus-cards">
+                    <!-- TVK Travels Bus Card -->
+                    <div class="bus-card tvk-style">
+                        <div class="bus-header">
+                            <h2>TVK TRAVELS</h2>
+                            <span class="bus-type">Bharat Benz A/C Sleeper (2+1)</span>
+                        </div>
+
+                        <div class="timing-section">
+                            <div class="departure">
+                                <span class="time">21:45</span>
+                                <span class="date">29 APR</span>
+                            </div>
+                            <div class="duration">
+                                <span>08hrs 30mins</span>
+                                <div class="route-line"></div>
+                            </div>
+                            <div class="arrival">
+                                <span class="time">06:15</span>
+                                <span class="date">30 APR</span>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="bus-details-toggle">
+                            <div class="detail-option active" data-section="policies">
+                                <span>Policies</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="detail-option" data-section="photos">
+                                <span>Photos</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="detail-option" data-section="amenities">
+                                <span>Amenities</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="detail-option" data-section="pickups">
+                                <span>Pickups & Drops</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="detail-option" data-section="reviews">
+                                <span>Reviews</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <div class="detail-section active" id="policies">
+                            <p>Cancellation policy: Free cancellation until 6 hours before departure</p>
+                        </div>
+
+                        <div class="detail-section" id="photos">
+                            <div class="bus-photos">
+                                <img src="../images/bus-photo1.jpg" alt="Bus Interior">
+                                <img src="../images/bus-photo2.jpg" alt="Bus Exterior">
+                            </div>
+                        </div>
+
+                        <div class="detail-section" id="amenities">
+                            <div class="amenities-list">
+                                <span><i class="fas fa-snowflake"></i> AC</span>
+                                <span><i class="fas fa-wifi"></i> WiFi</span>
+                                <span><i class="fas fa-plug"></i> Charging</span>
+                                <span><i class="fas fa-tv"></i> TV</span>
+                            </div>
+                        </div>
+
+                        <div class="detail-section" id="pickups">
+                            <div class="pickup-points">
+                                <h3>Pickup Points</h3>
+                                <ul>
+                                    <li>
+                                        <span class="time">19:05</span>
+                                        <span class="location"><strong>Hosur</strong>, hosur</span>
+                                    </li>
+                                    <li>
+                                        <span class="time">19:10</span>
+                                        <span class="location"><strong>Hosur</strong>, hosur</span>
+                                    </li>
+                                    <!-- More pickup points -->
+                                </ul>
+                            </div>
+
+                            <div class="drop-points">
+                                <h3>Drop Points</h3>
+                                <ul>
+                                    <li>
+                                        <span class="time">04:30</span>
+                                        <span class="location"><strong>Jadcherla</strong>, jadcharla</span>
+                                    </li>
+                                    <li>
+                                        <span class="time">06:00</span>
+                                        <span class="location"><strong>Shamshad Toll plaza</strong>, shamshad toll plaza</span>
+                                    </li>
+                                    <!-- More drop points -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="detail-section" id="reviews">
+                            <div class="rating-summary">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5 (128 Reviews)</span>
+                                </div>
+                                <button class="btn-outline view-reviews">View All Reviews</button>
+                            </div>
+                        </div>
+
+                        <div class="bus-footer">
+                            <div class="price-section">
+                                <span class="price">₹1,299</span>
+                                <span class="original-price">₹1,799</span>
+                                <span class="discount">28% OFF</span>
+                            </div>
+                            <button class="btn-primary select-seats">SELECT SEATS</button>
+                        </div>
+                    </div>
+
+                    <!-- More bus cards would follow the same pattern -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
+// Detail Section Toggle
+document.querySelectorAll('.detail-option').forEach(option => {
+    option.addEventListener('click', function() {
+        const sectionId = this.getAttribute('data-section');
+        
+        // Toggle active class on option
+        document.querySelectorAll('.detail-option').forEach(opt => {
+            opt.classList.remove('active');
+        });
+        this.classList.add('active');
+        
+        // Toggle section visibility
+        document.querySelectorAll('.detail-section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+    });
+});
+
+// View Reviews Button
+document.querySelectorAll('.view-reviews').forEach(button => {
+    button.addEventListener('click', () => {
+        // In a real app, this would show all reviews
+        alert('Showing all reviews for this bus');
+    });
+});
+
+// Select Seats Button
+document.querySelectorAll('.select-seats').forEach(button => {
+    button.addEventListener('click', () => {
+        window.location.href = 'seats.html';
+    });
+});
+
+// Modify Search Button
+document.querySelector('.modify-search').addEventListener('click', () => {
+    window.location.href = '../index.html';
+});
+
+// Sort Functionality
+document.querySelectorAll('.sort-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('.sort-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        this.classList.add('active');
+        
+        // In a real app, this would sort the results
+        const sortBy = this.textContent.toLowerCase();
+        console.log('Sorting by:', sortBy);
+    });
+});
+
+// Fastest Filter Dropdown
+const fastestFilter = document.querySelector('.fastest-filter');
+
+fastestFilter.addEventListener('click', () => {
+    // In a real app, this would show a dropdown with options
+    console.log('Fastest filter clicked');
+});
+    </script>
+</body>
+</html>

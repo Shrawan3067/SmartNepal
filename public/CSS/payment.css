@@ -1,0 +1,595 @@
+/* Payment Page Styles */
+.payment-progress {
+    background-color: var(--light);
+    padding: 20px 0;
+    margin-top: 70px;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.progress-steps::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--light-gray);
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.step span {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.step.active .step-number {
+    background-color: var(--primary);
+    color: white;
+}
+
+.step.active span {
+    color: var(--primary);
+}
+
+.step.current .step-number {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.step.current span {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.payment-main {
+    padding: 40px 0;
+}
+
+.payment-container {
+    display: flex;
+    gap: 30px;
+}
+
+/* Payment Options */
+.payment-options {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.payment-options h1 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.secure-notice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary);
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.secure-notice i {
+    font-size: 18px;
+}
+
+.payment-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--light-gray);
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--gray);
+    position: relative;
+    font-size: 15px;
+}
+
+.tab-btn.active {
+    color: var(--primary);
+}
+
+.tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Card Payment Form */
+.card-form {
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 75, 140, 0.1);
+}
+
+.card-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.card-icons img {
+    height: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.cvv-input {
+    position: relative;
+}
+
+.cvv-input i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    cursor: help;
+}
+
+.save-card {
+    margin-top: 25px;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-checkmark {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    position: relative;
+}
+
+.checkbox-option input:checked ~ .checkbox-checkmark {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkbox-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-option input:checked ~ .checkbox-checkmark:after {
+    display: block;
+}
+
+/* UPI Payment */
+.upi-container {
+    max-width: 500px;
+    text-align: center;
+}
+
+.upi-qr {
+    margin-bottom: 30px;
+}
+
+.upi-qr img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    border: 1px solid var(--light-gray);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.or-divider {
+    position: relative;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.or-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--light-gray);
+    z-index: 1;
+}
+
+.or-divider span {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    padding: 0 15px;
+    color: var(--gray);
+}
+
+.upi-id {
+    background-color: var(--light);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.upi-id p {
+    margin-bottom: 15px;
+}
+
+.upi-copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 12px 15px;
+    border-radius: 4px;
+    border: 1px solid var(--light-gray);
+}
+
+.upi-copy span {
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.copy-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+/* Net Banking */
+.bank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.bank-option {
+    position: relative;
+}
+
+.bank-option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.bank-option label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.bank-option input:checked + label {
+    border-color: var(--primary);
+    background-color: rgba(26, 75, 140, 0.05);
+}
+
+.bank-option img {
+    width: 30px;
+}
+
+.bank-option i {
+    font-size: 20px;
+    color: var(--primary);
+    width: 30px;
+    text-align: center;
+}
+
+/* Wallets */
+.wallet-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    max-width: 500px;
+}
+
+.wallet-option {
+    position: relative;
+}
+
+.wallet-option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.wallet-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 100%;
+}
+
+.wallet-option input:checked + label {
+    border-color: var(--primary);
+    background-color: rgba(26, 75, 140, 0.05);
+}
+
+
+/* Coupon Section */
+.coupon-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-gray);
+}
+
+.coupon-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.coupon-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.coupon-input input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+}
+
+/* Payment Summary */
+.payment-summary {
+    width: 350px;
+    position: sticky;
+    top: 100px;
+}
+
+.summary-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+}
+
+.summary-card h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.info-row span:first-child {
+    color: var(--gray);
+}
+
+.fare-summary {
+    margin: 25px 0;
+}
+
+.fare-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.fare-row.discount {
+    color: var(--secondary);
+}
+
+.fare-row.total {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--light-gray);
+}
+
+.secure-payment {
+    margin: 25px 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.secure-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.payment-icons img {
+    height: 30px;
+}
+
+.pay-now-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.cancellation-policy {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--gray);
+    text-align: center;
+}
+
+.cancellation-policy i {
+    color: var(--primary);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .payment-container {
+        flex-direction: column;
+    }
+    
+    .payment-summary {
+        width: 100%;
+        position: static;
+    }
+    
+    .progress-steps {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .progress-steps::before {
+        display: none;
+    }
+    
+    .step {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .step-number {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .wallet-list {
+        grid-template-columns: 1fr;
+    }
+}

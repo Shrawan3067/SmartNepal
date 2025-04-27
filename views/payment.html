@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment | SmartNepal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/CSS/style.css">
+    <link rel="stylesheet" href="/public/CSS/payment.css">
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">SmartNepal</a>
+            <div class="nav-links">
+                <a href="#">Bus Tickets</a>
+                <a href="#">Hotels</a>
+                <a href="#">Tour Packages</a>
+                <a href="#">Help</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-outline">Login</a>
+                    <a href="signup.html" class="btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Payment Progress -->
+    <section class="payment-progress">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <span>Seat Selection</span>
+                </div>
+                <div class="step active">
+                    <div class="step-number">2</div>
+                    <span>Passenger Details</span>
+                </div>
+                <div class="step current">
+                    <div class="step-number">3</div>
+                    <span>Payment</span>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <span>Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="payment-main">
+        <div class="container">
+            <div class="payment-container">
+                <!-- Payment Options -->
+                <section class="payment-options">
+                    <h1>Secure Payment</h1>
+                    <p class="secure-notice">
+                        <i class="fas fa-lock"></i> Your payment information is encrypted and secure
+                    </p>
+
+                    <div class="payment-tabs">
+                        <button class="tab-btn active" data-tab="cards">Credit/Debit Card</button>
+                        <button class="tab-btn" data-tab="upi">UPI</button>
+                        <button class="tab-btn" data-tab="netbanking">Net Banking</button>
+                        <button class="tab-btn" data-tab="wallets">Wallets</button>
+                    </div>
+
+                    <div class="tab-content active" id="cards">
+                        <form class="card-form" id="cardForm">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                <div class="card-icons">
+                                    <img src="/public/images/Visadebitcardpng-1599584312349.png" alt="Visa">
+                                    <img src="/public/images/mastercard.png" alt="Mastercard">
+                                    <img src="/public/images/rupay.png" alt="Rupay">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cardName">Name on Card</label>
+                                <input type="text" id="cardName" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date</label>
+                                    <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <div class="cvv-input">
+                                        <input type="text" id="cvv" placeholder="123" required>
+                                        <i class="fas fa-question-circle" title="3-digit code on back of your card"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="save-card">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="saveCard">
+                                    <span class="checkbox-checkmark"></span>
+                                    <span>Save this card for faster payments</span>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-content" id="upi">
+                        <div class="upi-container">
+                            <div class="upi-qr">
+                                <img src="/public/images/qrcode.png" alt="UPI QR Code">
+                                <p>Scan this QR code with any UPI app</p>
+                            </div>
+                            <div class="or-divider">
+                                <span>OR</span>
+                            </div>
+                            <div class="upi-id">
+                                <p>Send payment directly to our UPI ID:</p>
+                                <div class="upi-copy">
+                                    <span>SmartNepal.travels@upi</span>
+                                    <button class="btn-outline copy-btn">
+                                        <i class="far fa-copy"></i> Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="netbanking">
+                        <div class="bank-list">
+                            <div class="bank-option">
+                                <input type="radio" name="bank" id="hdfc" checked>
+                                <label for="hdfc">
+                                    <img src="../images/hdfc-logo.png" alt="HDFC Bank">
+                                    <span>HDFC Bank</span>
+                                </label>
+                            </div>
+                            <div class="bank-option">
+                                <input type="radio" name="bank" id="sbi">
+                                <label for="sbi">
+                                    <img src="../images/sbi-logo.png" alt="SBI">
+                                    <span>State Bank of nepal</span>
+                                </label>
+                            </div>
+                            <div class="bank-option">
+                                <input type="radio" name="bank" id="icici">
+                                <label for="icici">
+                                    <img src="../images/icici-logo.png" alt="ICICI Bank">
+                                    <span>ICICI Bank</span>
+                                </label>
+                            </div>
+                            <div class="bank-option">
+                                <input type="radio" name="bank" id="axis">
+                                <label for="axis">
+                                    <img src="../images/axis-logo.png" alt="Axis Bank">
+                                    <span>Axis Bank</span>
+                                </label>
+                            </div>
+                            <div class="bank-option">
+                                <input type="radio" name="bank" id="other">
+                                <label for="other">
+                                    <i class="fas fa-university"></i>
+                                    <span>Other Banks</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="wallets">
+                        <div class="wallet-list">
+                            <div class="wallet-option">
+                                <input type="radio" name="wallet" id="paytm" checked>
+                                <label for="paytm">
+                                    <img src="/public/images/1024px-Esewa_logo.webp.png" alt="esewa" width="102.4px" height="53.4px">
+                                    <span>esewa</span>
+                                </label>
+                            </div>
+                            <div class="wallet-option">
+                                <input type="radio" name="wallet" id="phonepe">
+                                <label for="phonepe">
+                                    <img src="/public/images/PikPng.com_wallet-png_2923069.png" alt="khalti" width="128.4px" height="51.2px">
+                                    <span>khalti</span>
+                                </label>
+                            </div>
+                            <div class="wallet-option">
+                                <input type="radio" name="wallet" id="amazonpay">
+                                <label for="amazonpay">
+                                    <img src="/public/images/IME-Pay-Logo_white.jpg" width="102.4px" height="66px" alt="ime pay">
+                                    <span>IME Pay</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="coupon-section">
+                        <div class="coupon-toggle">
+                            <span>Have a coupon code?</span>
+                            <button class="toggle-btn">Apply Coupon <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="coupon-input" style="display: none;">
+                            <input type="text" placeholder="Enter coupon code">
+                            <button class="btn-outline">Apply</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Booking Summary -->
+                <aside class="payment-summary">
+                    <div class="summary-card">
+                        <h2>Booking Summary</h2>
+                        
+                        <div class="trip-info">
+                            <div class="info-row">
+                                <span>Route</span>
+                                <span>Mumbai to Goa</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Date</span>
+                                <span>Sat, 15 Jul 2023</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Departure</span>
+                                <span>22:30</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Bus</span>
+                                <span>SmartNepal Travels • AC Sleeper</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Passengers</span>
+                                <span>1 Adult</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Seats</span>
+                                <span>L1, L2</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fare-summary">
+                            <div class="fare-row">
+                                <span>Base Fare</span>
+                                <span>₹2,398</span>
+                            </div>
+                            <div class="fare-row">
+                                <span>Taxes & Fees</span>
+                                <span>₹200</span>
+                            </div>
+                            <div class="fare-row discount">
+                                <span>Discount</span>
+                                <span>-₹400</span>
+                            </div>
+                            <div class="fare-row">
+                                <span>Travel Insurance</span>
+                                <span>₹99</span>
+                            </div>
+                            <div class="fare-row total">
+                                <span>Total Amount</span>
+                                <span>₹2,297</span>
+                            </div>
+                        </div>
+                        
+                        <div class="secure-payment">
+                            <div class="secure-badge">
+                                <i class="fas fa-lock"></i>
+                                <span>100% Secure Payments</span>
+                            </div>
+                            <div class="payment-icons">
+                                <img src="../images/pci-dss.png" alt="PCI DSS Compliant">
+                                <img src="../images/ssl-secure.png" alt="SSL Secure">
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary pay-now-btn">Pay Now</button>
+                        
+                        <div class="cancellation-policy">
+                            <p><i class="fas fa-info-circle"></i> Free cancellation available until 6 hours before departure</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script src="/public/js/payment.js"></script>
+</body>
+</html>

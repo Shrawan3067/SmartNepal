@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Seats | SmartNepal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/CSS/style.css">
+    <link rel="stylesheet" href="/public/CSS/seats.css">
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">SmartNepal</a>
+            <div class="nav-links">
+                <a href="#">Bus Tickets</a>
+                <a href="#">Hotels</a>
+                <a href="#">Tour Packages</a>
+                <a href="#">Help</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-outline">Login</a>
+                    <a href="signup.html" class="btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Seat Selection Header -->
+    <section class="seat-header">
+        <div class="container">
+            <div class="trip-summary">
+                <h1>Select Your Seats</h1>
+                <div class="trip-details">
+                    <div class="route">
+                        <span class="from">Mumbai</span>
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="to">Goa</span>
+                    </div>
+                    <div class="date-operator">
+                        <span class="date">Sat, 15 Jul 2023</span>
+                        <span class="operator">SmartNepal Travels • AC Sleeper (2+1)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="seat-main">
+        <div class="container">
+            <div class="seat-layout-container">
+                <!-- Seat Layout -->
+                <section class="seat-layout">
+                    <div class="bus-front">
+                        <i class="fas fa-bus"></i>
+                        <span>Front of Bus</span>
+                    </div>
+
+                    <div class="seat-map">
+                        <!-- Lower Deck -->
+                        <div class="deck lower-deck">
+                            <h3>Lower Deck</h3>
+                            <div class="seats-grid">
+                                <!-- Row 1 -->
+                                <div class="seat-row">
+                                    <div class="seat" data-seat="L1" data-type="sleeper" data-gender="any">
+                                        <span>L1</span>
+                                    </div>
+                                    <div class="seat" data-seat="L2" data-type="sleeper" data-gender="any">
+                                        <span>L2</span>
+                                    </div>
+                                    <div class="walkway"></div>
+                                    <div class="seat" data-seat="L3" data-type="sleeper" data-gender="any">
+                                        <span>L3</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Row 2 -->
+                                <div class="seat-row">
+                                    <div class="seat" data-seat="L4" data-type="sleeper" data-gender="any">
+                                        <span>L4</span>
+                                    </div>
+                                    <div class="seat" data-seat="L5" data-type="sleeper" data-gender="any">
+                                        <span>L5</span>
+                                    </div>
+                                    <div class="walkway"></div>
+                                    <div class="seat booked" data-seat="L6" data-type="sleeper" data-gender="any">
+                                        <span>L6</span>
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+                                
+                                <!-- More rows would follow the same pattern -->
+                                
+                                <!-- Row 5 (Women-only row) -->
+                                <div class="seat-row">
+                                    <div class="seat women-only" data-seat="L13" data-type="sleeper" data-gender="female">
+                                        <span>L13</span>
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <div class="seat women-only" data-seat="L14" data-type="sleeper" data-gender="female">
+                                        <span>L14</span>
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <div class="walkway"></div>
+                                    <div class="seat women-only booked" data-seat="L15" data-type="sleeper" data-gender="female">
+                                        <span>L15</span>
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Upper Deck -->
+                        <div class="deck upper-deck">
+                            <h3>Upper Deck</h3>
+                            <div class="seats-grid">
+                                <!-- Row 1 -->
+                                <div class="seat-row">
+                                    <div class="seat" data-seat="U1" data-type="sleeper" data-gender="any">
+                                        <span>U1</span>
+                                    </div>
+                                    <div class="seat" data-seat="U2" data-type="sleeper" data-gender="any">
+                                        <span>U2</span>
+                                    </div>
+                                    <div class="walkway"></div>
+                                    <div class="seat booked" data-seat="U3" data-type="sleeper" data-gender="any">
+                                        <span>U3</span>
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+                                
+                                <!-- More rows would follow the same pattern -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seat Legend -->
+                    <div class="seat-legend">
+                        <div class="legend-item">
+                            <div class="seat available"></div>
+                            <span>Available</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat selected"></div>
+                            <span>Selected</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat booked"></div>
+                            <span>Booked</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat women-only"></div>
+                            <span>Women Only</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Booking Summary -->
+                <aside class="booking-summary">
+                    <div class="summary-card">
+                        <h2>Booking Summary</h2>
+                        
+                        <div class="trip-info">
+                            <div class="info-row">
+                                <span>Route</span>
+                                <span>Mumbai to Goa</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Date</span>
+                                <span>Sat, 15 Jul 2023</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Departure</span>
+                                <span>22:30</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Operator</span>
+                                <span>SmartNepal Travels</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Bus Type</span>
+                                <span>AC Sleeper (2+1)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="selected-seats">
+                            <h3>Selected Seats</h3>
+                            <div class="seats-list">
+                                <div class="no-seats">No seats selected yet</div>
+                                <!-- Selected seats will appear here -->
+                            </div>
+                        </div>
+                        
+                        <div class="fare-summary">
+                            <div class="fare-row">
+                                <span>Base Fare (x1)</span>
+                                <span>₹1,199</span>
+                            </div>
+                            <div class="fare-row">
+                                <span>Taxes & Fees</span>
+                                <span>₹100</span>
+                            </div>
+                            <div class="fare-row discount">
+                                <span>Discount</span>
+                                <span>-₹200</span>
+                            </div>
+                            <div class="fare-row total">
+                                <span>Total Amount</span>
+                                <span>₹1,099</span>
+                            </div>
+                        </div>
+                        
+                        <div class="passenger-form">
+                            <h3>Passenger Details</h3>
+                            <form id="passengerForm">
+                                <div class="form-group">
+                                    <label for="passengerName">Full Name</label>
+                                    <input type="text" id="passengerName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="passengerAge">Age</label>
+                                    <input type="number" id="passengerAge" min="1" max="100" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="gender" value="male" required>
+                                            <span class="radio-checkmark"></span>
+                                            Male
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="gender" value="female" required>
+                                            <span class="radio-checkmark"></span>
+                                            Female
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="gender" value="other" required>
+                                            <span class="radio-checkmark"></span>
+                                            Other
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="passengerEmail">Email</label>
+                                    <input type="email" id="passengerEmail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="passengerPhone">Phone Number</label>
+                                    <input type="tel" id="passengerPhone" required>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="add-ons">
+                            <h3>Add Travel Insurance</h3>
+                            <label class="checkbox-option">
+                                <input type="checkbox" id="travelInsurance">
+                                <span class="checkbox-checkmark"></span>
+                                <span>Add travel insurance for ₹99 (Recommended)</span>
+                            </label>
+                        </div>
+                        
+                        <button class="btn-primary proceed-btn">Proceed to Payment</button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script src="/public/js/seats.js"></script>
+</body>
+</html>
