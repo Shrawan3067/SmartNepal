@@ -233,7 +233,7 @@ swapBtn.addEventListener('click', () => {
 document.querySelector('.search-btn').addEventListener('click', () => {
     // Validate inputs before redirect
     if (fromInput.value.trim() && toInput.value.trim()) {
-        window.location.href = 'views/search.html';
+        window.location.href = 'search.html';
     } else {
         alert('Please select both departure and arrival cities');
     }
