@@ -44,7 +44,7 @@ Automated booking confirmation via email/SMS
 
 ## 🧱 Tech Stack
 
-#### Frontend
+### Frontend
 
 HTML, CSS, JavaScript
 
